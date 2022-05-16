@@ -11,14 +11,15 @@ pipeline {
                 sh 'mvn test'
             }
             post {
-                always {
-                    junit 'Test*.xml'
-                }
+                    always {
+                        junit 'Test*.xml'
+                    }
             }
         }
         stage('Deliver') {
             steps {
                 // sh './jenkins/scripts/deliver.sh'
+                echo 'Delivered'
             }
         }
     }
